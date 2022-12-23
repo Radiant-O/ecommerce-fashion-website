@@ -5,7 +5,7 @@
         LAZ STORE
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar lg_screen">
         <router-link
         class="link"
         v-for="route in routes"
@@ -54,34 +54,43 @@
         
 
         <div class="auth">
-            <p>LOGIN</p>
+            <p>SIGN IN</p>
         </div>
 
         <div class="cart">
+          <span class="cart_no">0</span>
+          <img src="../assets/icons/icons8-shopping-cart-50.png" alt="">
+        </div>
 
+        <div class="menu">
+        <img src="../assets/icons/icon-menu.svg" />
         </div>
     </div>
   </header>
+  <Cart v-if="cart" />
 </template>
 
 <script setup>
-  const routes = [
-    {
-      id: 1,
-      name: "HOME",
-      to: "/"
-    },
-    {
-      id: 2,
-      name: "STORE",
-      to: "/store"
-    },
-    {
-      id: 3,
-      name: "CONTACTS",
-      to: "/contacts"
-    }
-  ]
+import Cart from "@/components/cart.vue"
+import { ref } from "vue"
+const routes = [
+  {
+    id: 1,
+    name: "HOME",
+    to: "/",
+  },
+  {
+    id: 2,
+    name: "STORE",
+    to: "/store",
+  },
+  {
+    id: 3,
+    name: "CONTACTS",
+    to: "/contacts",
+  },
+];
+const cart = ref(false)
 </script>
 
 <style></style>

@@ -7,9 +7,16 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint odio
         consequuntur quae repellendus autem harum quos vitae.
       </p>
-      <p>121, Street Australia</p>
-      <p>info@lasser.com</p>
-      <p>+0123 546 7890</p>
+      <p><img src="../assets/icons/icons8-place-marker-100.png"/> 121, Street Australia</p>
+      <p><img src="../assets/icons/icons8-envelope-60.png"/> info@lasser.com</p>
+      <p><img src="../assets/icons/icons8-call-48.png"/> +0123 546 7890</p>
+      <div class="socials">
+        <img src="../assets/icons/icons8-facebook-96.png"/>
+        <img src="../assets/icons/icons8-instagram-128.png"/>
+        <img src="../assets/icons/icons8-linkedin-96.png"/>
+        <img src="../assets/icons/icons8-twitter-96.png"/>
+        <img src="../assets/icons/icons8-youtube-96.png"/>
+      </div>
     </div>
     <div class="footer_links">
       <ul>

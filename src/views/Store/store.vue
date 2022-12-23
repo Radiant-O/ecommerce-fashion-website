@@ -242,12 +242,32 @@
                 <div class="py-1">
                   <MenuItem v-slot="{ active }" >
                     <p
-                      class="[
+                      :class="[
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 text-sm',
+                        'block px-2 py-2 text-sm',
                       ]"
                       >
-                    SEERER
+                    Latest
+                    </p>
+                  </MenuItem>
+                  <MenuItem v-slot="{ active }" >
+                    <p
+                      :class="[
+                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        'block px-2 py-2 text-sm',
+                      ]"
+                      >
+                    Popular
+                    </p>
+                  </MenuItem>
+                  <MenuItem v-slot="{ active }" >
+                    <p
+                      :class="[
+                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        'block px-2 py-2 text-sm',
+                      ]"
+                      >
+                    Trending
                     </p>
                   </MenuItem>
                  
@@ -266,7 +286,7 @@
             <p class="name">Colorful Stylish Shirt</p>
             <p class="amount">$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
+                <p><router-link to="/store/details">View Details</router-link></p>
                 <p>Add To Cart</p>
             </div>
         </div>
@@ -393,13 +413,18 @@
         </div>
     </div>
       </div>
+
+      <div class="pages">
+        <p><ChevronLeftIcon></ChevronLeftIcon>Prev</p>
+        <p><ChevronRightIcon></ChevronRightIcon>Next</p>
+      </div>
     </section>
   </main>
 </template>
 
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/20/solid";
+import { ChevronDownIcon, ChevronLeftIcon,  ChevronRightIcon } from "@heroicons/vue/20/solid";
 </script>
 
 <style></style>
