@@ -8,7 +8,7 @@
             <p class="ads_btn">Shop Now</p>
         </div>
     </div>
-    <div class="ads_box sm:hidden lg:block">
+    <div class="ads_box sm:hidden lg:flex">
        
         <div class="ads_text right">
             <p class="head">20% OFF ALL ORDER</p>

@@ -218,7 +218,7 @@
           <Menu as="div" class="relative inline-block text-left">
             <div>
               <MenuButton
-              class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+              class="inline-flex justify-center outline-none w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
               >
                 Sort by
                 <ChevronDownIcon
@@ -286,8 +286,8 @@
             <p class="name">Colorful Stylish Shirt</p>
             <p class="amount">$50</p>
             <div class="prod_btn">
-                <p><router-link to="/store/details">View Details</router-link></p>
-                <p>Add To Cart</p>
+                <p><router-link to="/store/details"><img src="../../assets/icons/icons8-eyes-64.png"/><span>View Details</span></router-link></p>
+                <p><img src="../../assets/icons/icons8-shopping-cart-50.png"/> <span>Add to Cart</span></p>
             </div>
         </div>
     </div>

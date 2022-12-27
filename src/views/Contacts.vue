@@ -42,8 +42,8 @@
           <img src="../assets/icons/icons8-envelope-60.png" /> info@lasser.com
         </p>
         <p><img src="../assets/icons/icons8-call-48.png" /> +0123 546 7890</p>
-    </div>
-<div class="p">
+      </div>
+      <div class="p">
         <h4>Store 2</h4>
         <p>
           <img src="../assets/icons/icons8-place-marker-100.png" /> 121, Street
@@ -53,7 +53,7 @@
           <img src="../assets/icons/icons8-envelope-60.png" /> info@lasser.com
         </p>
         <p><img src="../assets/icons/icons8-call-48.png" /> +0123 546 7890</p>
-    </div>
+      </div>
       </div>
     </div>
 </div>

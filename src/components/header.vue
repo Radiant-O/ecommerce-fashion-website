@@ -1,25 +1,20 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
   <header class="header">
-    <div class="logo">
-        LAZ STORE
-    </div>
+    <div class="logo">LAZ STORE</div>
 
     <nav class="navbar lg_screen">
-        <router-link
+      <router-link
         class="link"
         v-for="route in routes"
         :key="route.id"
         :to="route.to"
-        >
-        {{route.name}}
-        </router-link>
+      >
+        {{ route.name }}
+      </router-link>
     </nav>
     <div class="xra">
-      
-        <div class="search">
-           
-    
+      <div class="search">
         <div class="flex justify-start items-center py-3 relative">
           <input
             class="text-sm leading-none text-left text-gray-600 px-4 py-3 w-full border rounded border-gray-300 outline-none"
@@ -50,29 +45,52 @@
             />
           </svg>
         </div>
-        </div>
-        
+      </div>
 
-        <div class="auth">
-            <p>SIGN IN</p>
-        </div>
+      <div class="auth">
+        <p>SIGN IN</p>
+      </div>
 
-        <div class="cart">
-          <span class="cart_no">0</span>
-          <img src="../assets/icons/icons8-shopping-cart-50.png" alt="">
-        </div>
+      <div class="cart" @click="toggleCart">
+        <span class="cart_no">0</span>
+        <img src="../assets/icons/icons8-shopping-cart-50.png" alt="" />
+      </div>
 
-        <div class="menu">
+      <div class="menu" @click="toggleDir">
         <img src="../assets/icons/icon-menu.svg" />
-        </div>
+      </div>
     </div>
   </header>
+
+  <nav class="sm_nav" v-if="toggle">
+    <div>
+      <img
+        src="../assets/icons/icon-close.svg"
+        class="close_nav"
+        @click="toggleDir"
+      />
+    </div>
+    <router-link
+    @click="toggle=false"
+      class="sm_link"
+      v-for="route in routes"
+      :key="route.id"
+      :to="route.to"
+    >
+      {{ route.name }}
+    </router-link>
+
+    <div class="mob_auth">
+      <p>SIGN IN</p>
+    </div>
+  </nav>
+
   <Cart v-if="cart" />
 </template>
 
 <script setup>
-import Cart from "@/components/cart.vue"
-import { ref } from "vue"
+import Cart from "@/components/cart.vue";
+import { ref } from "vue";
 const routes = [
   {
     id: 1,
@@ -90,7 +108,16 @@ const routes = [
     to: "/contacts",
   },
 ];
-const cart = ref(false)
+const toggle = ref(false);
+const cart = ref(false);
+
+const toggleDir = () => {
+  toggle.value = !toggle.value;
+};
+
+const toggleCart = () => {
+  cart.value = !cart.value;
+};
 </script>
 
 <style></style>
