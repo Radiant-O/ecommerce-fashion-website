@@ -3,7 +3,8 @@
     <Swiper 
     navigation
     :modules="[Navigation, Pagination]"
-    parallax 
+    parallax
+    autoplay
     :pagination="{clickable: true}"
     class="banner parallax-slider">
     <SwiperSlide
@@ -99,13 +100,16 @@
     <h3 class="top_text">Trending Products</h3>
     <Trend />
   </section>
-  <section>
+  <!-- <section>
     <h3 class="top_text">New Arrrival</h3>
     <Trend />
-  </section>
+  </section> -->
 </template>
 
 <script setup>
+import axios from "axios";
+import { onMounted } from "vue";
+
 import Shopproduct from "@/components/Shopproduct.vue";
 import ProductAds from "@/components/ProductAds.vue";
 import Trend from "@/components/Trend.vue";
@@ -122,7 +126,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 
-// modules: [Navigation],
+onMounted(async () => {
+  let res = await axios.get('https://fakestoreapi.com/products');
+  
+})
 
 </script>
 

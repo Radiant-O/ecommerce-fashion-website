@@ -1,100 +1,34 @@
 <template>
-  <section class="prod_container">
+  <section class="prod_container" v-for="data in datas">
     <div class="real_prod">
-        <img src="../assets/img/product-1.jpg">
+        <img :src="data.image">
         <div class="abt_prod">
-            <p class="name">Colorful Stylish Shirt</p>
-            <p class="amount">$50</p>
+            <p class="name">{{data.title}}</p>
+            <p class="amount">${{ data.price }}</p>
             <div class="prod_btn">
                 <p><img src="../assets/icons/icons8-eyes-64.png" /> View Details</p>
                 <p><img src="../assets/icons/icons8-shopping-cart-50.png" /> Add To Cart</p>
             </div>
         </div>
     </div>
-    <div class="real_prod">
-        <img src="../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-                <p><img src="../assets/icons/icons8-eyes-64.png" /> View Details</p>
-                <p><img src="../assets/icons/icons8-shopping-cart-50.png" /> Add To Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="real_prod">
-        <img src="../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="real_prod">
-        <img src="../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="real_prod">
-        <img src="../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="real_prod">
-        <img src="../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="real_prod">
-        <img src="../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="real_prod">
-        <img src="../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
-            </div>
-        </div>
-    </div>
+
   </section>
 </template>
 
-<script>
-export default {
+<script setup>
+import axios from "axios";
+import { onMounted } from "vue";
 
-}
+let datas = []
+
+onMounted(async () => {
+    await axios
+    .get('https://fakestoreapi.com/products')
+    .then((response) => {
+    datas = response.data
+    console.log(datas)
+  })
+})
 </script>
 
 <style>
