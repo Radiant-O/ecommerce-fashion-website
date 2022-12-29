@@ -1,7 +1,7 @@
 <template>
-  <section class="prod_container" v-for="data in datas">
-    <div class="real_prod">
-        <img :src="data.image">
+  <section class="prod_container">
+    <div class="real_prod" v-for="data in datas">
+        <img class="prod_img" :src="data.image">
         <div class="abt_prod">
             <p class="name">{{data.title}}</p>
             <p class="amount">${{ data.price }}</p>
@@ -11,21 +11,20 @@
             </div>
         </div>
     </div>
-
   </section>
 </template>
 
 <script setup>
 import axios from "axios";
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
 
-let datas = []
+let datas = ref([])
 
 onMounted(async () => {
     await axios
     .get('https://fakestoreapi.com/products')
     .then((response) => {
-    datas = response.data
+    datas.value = response.data
     console.log(datas)
   })
 })
