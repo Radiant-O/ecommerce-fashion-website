@@ -4,136 +4,159 @@
       <div class="aside_boxes">
         <h5 class="filter_top">Categories</h5>
         <div class="filter_cat">
-          <div>
+          <div v-for="category in categories" :key="category.id">
             <label for="">
-            <input type="checkbox" />
-             All Products </label> <span>1000</span>
+              <input type="checkbox" :id="category" :value="category" v-model="checked" />
+              {{ category }}
+            </label>
+            <span>1000</span>
           </div>
-          <div>
+          <!--<div>
             <label for="">
-            <input type="checkbox" />
-             Men Wear</label>
+              <input type="checkbox" />
+              Men Wear</label
+            >
             <span>150</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Women Wear</label>
+              <input type="checkbox" />
+              Women Wear</label
+            >
             <span>150</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Children </label>
+              <input type="checkbox" />
+              Children
+            </label>
             <span>150</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Jump Suit</label>
+              <input type="checkbox" />
+              Jump Suit</label
+            >
             <span>150</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Sport Wear</label>
+              <input type="checkbox" />
+              Sport Wear</label
+            >
             <span>150</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Developers Wear</label>
-          </div>
+              <input type="checkbox" />
+              Developers Wear</label
+            >
+          </div> -->
         </div>
+      </div>
+      <!-- <div class="aside_boxes">
+        <h5 class="filter_top">Filter by Price</h5>
+        <div class="filter_cat">
+          <div>
+            <label for="">
+              <input type="checkbox" />
+              All Price
+            </label>
+            <span>1000</span>
+          </div>
+          <div>
+            <label for="">
+              <input type="checkbox" />
+              $0.99 - $100
+            </label>
+            <span>150</span>
+          </div>
+          <div>
+            <label for="">
+              <input type="checkbox" />
+              $101 -$200
+            </label>
+            <span>150</span>
+          </div>
+          <div>
+            <label for="">
+              <input type="checkbox" />
+              $201 - $300</label
+            >
+            <span>150</span>
+          </div>
+          <div>
+            <label for="">
+              <input type="checkbox" />
+              $301 - $400
+            </label>
+            <span>150</span>
+          </div>
+          <div>
+            <label for="">
+              <input type="checkbox" />
+              $401 - $500
+            </label>
+            <span>150</span>
+          </div>
+          <div>
+            <label for="">
+              <input type="checkbox" />
+              $501 and above</label
+            >
+          </div>
+        </div> 
       </div>
       <div class="aside_boxes">
         <h5 class="filter_top">Filter by Price</h5>
         <div class="filter_cat">
           <div>
             <label for="">
-            <input type="checkbox" />
-             All Price </label> <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-            <input type="checkbox" />
-             $0.99 - $100 </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-            <input type="checkbox" />
-             $101 -$200 </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-            <input type="checkbox" />
-             $201 - $300</label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-            <input type="checkbox" />
-             $301 - $400 </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-            <input type="checkbox" />
-             $401 - $500 </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-            <input type="checkbox" />
-             $501 and above</label>
-          </div>
-        </div>
-      </div>
-      <div class="aside_boxes">
-        <h5 class="filter_top">Filter by Price</h5>
-        <div class="filter_cat">
-          <div>
-            <label for="">
-            <input type="checkbox" />
-             All Color</label>
+              <input type="checkbox" />
+              All Color</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Black</label>
+              <input type="checkbox" />
+              Black</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             White</label>
+              <input type="checkbox" />
+              White</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Red</label>
+              <input type="checkbox" />
+              Red</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Blue</label>
+              <input type="checkbox" />
+              Blue</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Green</label>
+              <input type="checkbox" />
+              Green</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             Trending Color</label>
+              <input type="checkbox" />
+              Trending Color</label
+            >
           </div>
         </div>
       </div>
@@ -142,42 +165,48 @@
         <div class="filter_cat">
           <div>
             <label for="">
-            <input type="checkbox" />
-             All Size</label>
+              <input type="checkbox" />
+              All Size</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             XL</label>
+              <input type="checkbox" />
+              XL</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             L</label>
+              <input type="checkbox" />
+              L</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             M</label>
+              <input type="checkbox" />
+              M</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             S</label>
+              <input type="checkbox" />
+              S</label
+            >
             <span>1000</span>
           </div>
           <div>
             <label for="">
-            <input type="checkbox" />
-             XS</label>
+              <input type="checkbox" />
+              XS</label
+            >
             <span>1000</span>
           </div>
         </div>
-      </div>
+      </div>-->
     </aside>
     <section class="store_items">
       <div class="items_top">
@@ -218,7 +247,7 @@
           <Menu as="div" class="relative inline-block text-left">
             <div>
               <MenuButton
-              class="inline-flex justify-center outline-none w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+                class="inline-flex justify-center outline-none w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
               >
                 Sort by
                 <ChevronDownIcon
@@ -237,42 +266,39 @@
               leave-to-class="transform opacity-0 scale-95"
             >
               <MenuItems
-              class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
               >
                 <div class="py-1">
-                  <MenuItem v-slot="{ active }" >
+                  <MenuItem v-slot="{ active }">
                     <p
                       :class="[
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                         'block px-2 py-2 text-sm',
                       ]"
-                      >
-                    Latest
+                    >
+                      Latest
                     </p>
                   </MenuItem>
-                  <MenuItem v-slot="{ active }" >
+                  <MenuItem v-slot="{ active }">
                     <p
                       :class="[
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                         'block px-2 py-2 text-sm',
                       ]"
-                      >
-                    Popular
+                    >
+                      Popular
                     </p>
                   </MenuItem>
-                  <MenuItem v-slot="{ active }" >
+                  <MenuItem v-slot="{ active }">
                     <p
                       :class="[
                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                         'block px-2 py-2 text-sm',
                       ]"
-                      >
-                    Trending
+                    >
+                      Trending
                     </p>
                   </MenuItem>
-                 
-                  
-                  
                 </div>
               </MenuItems>
             </transition>
@@ -280,138 +306,147 @@
         </div>
       </div>
       <div class="items_store">
+        <div class="real_prod" v-for="data in computedItems">
+          <img class="prod_img" :src=data.image />
+          <div class="abt_prod">
+            <p class="name">{{data.title}}</p>
+            <p class="amount">${{ data.price }}</p>
+            <div class="prod_btn">
+              <p>
+                <router-link to="/store/details"
+                  ><img src="../../assets/icons/icons8-eyes-64.png" /><span
+                    >View Details</span
+                  ></router-link
+                >
+              </p>
+              <p>
+                <img src="../../assets/icons/icons8-shopping-cart-50.png" />
+                <span>Add to Cart</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
+            <p>Colorful Stylish Shirt</p>
+            <p>$50</p>
+            <div class="prod_btn">
+              <p>View Details</p>
+              <p>Add To Cart</p>
+            </div>
+          </div>
+        </div>
         <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p class="name">Colorful Stylish Shirt</p>
-            <p class="amount">$50</p>
-            <div class="prod_btn">
-                <p><router-link to="/store/details"><img src="../../assets/icons/icons8-eyes-64.png"/><span>View Details</span></router-link></p>
-                <p><img src="../../assets/icons/icons8-shopping-cart-50.png"/> <span>Add to Cart</span></p>
-            </div>
-        </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
+        <div class="real_prod">
+          <img src="../../assets/img/product-1.jpg" />
+          <div class="abt_prod">
             <p>Colorful Stylish Shirt</p>
             <p>$50</p>
             <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
+              <p>View Details</p>
+              <p>Add To Cart</p>
             </div>
-        </div>
-    </div>
-    <div class="real_prod">
-        <img src="../../assets/img/product-1.jpg">
-        <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-                <p>View Details</p>
-                <p>Add To Cart</p>
-            </div>
-        </div>
-    </div>
+          </div>
+        </div> -->
       </div>
 
       <div class="pages">
@@ -424,7 +459,48 @@
 
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import { ChevronDownIcon, ChevronLeftIcon,  ChevronRightIcon } from "@heroicons/vue/20/solid";
+import {
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/vue/20/solid";
+import axios from "axios";
+import { ref, onMounted, computed } from "vue";
+
+let datas = ref([]);
+let categories = ref([]);
+
+onMounted(async () => {
+  await axios.get("https://fakestoreapi.com/products")
+  .then((response) => {
+    datas.value = response.data;
+    console.log(datas);
+  });
+
+  let res = await axios.get("https://fakestoreapi.com/products/categories")
+  console.log(res.data)
+  categories.value = res.data
+});
+
+let checked = ref([]);
+
+const computedItems = computed(()=>{
+      if (checked.value.length === 0) {
+        return datas.value;
+      } else {
+        return datas.value.filter(data =>
+          checked.value.indexOf(data.category) !== -1 
+        );  
+      }
+  })
+
+
+
+// const sortCategory = async() => {
+//   let res = await axios.get("https://fakestoreapi.com/products/categories")
+//   categories.value = res
+//   console.log(res)
+// }
 </script>
 
 <style></style>

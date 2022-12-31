@@ -22,11 +22,12 @@ let datas = ref([])
 
 onMounted(async () => {
     await axios
-    .get('https://fakestoreapi.com/products')
+    .get('https://fakestoreapi.com/products?limit=8')
     .then((response) => {
     datas.value = response.data
     console.log(datas)
   })
+  .catch((error) => console.log(error))
 })
 </script>
 

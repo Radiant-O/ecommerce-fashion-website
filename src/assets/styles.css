@@ -168,14 +168,17 @@
 .real_prod {
   @apply border pt-3;
 }
-.real_prod img {
-  @apply w-[13em] mx-auto;
+.real_prod .prod_img {
+  @apply w-[208px] h-[270px] mx-auto;
 }
 .real_prod .abt_prod {
   @apply border-t;
 }
 .abt_prod p {
-  @apply text-center py-1;
+  @apply text-center py-1 px-2;
+}
+.abt_prod .name{
+  @apply h-24
 }
 .abt_prod .prod_btn {
   @apply lg:flex lg:justify-between;
@@ -184,7 +187,7 @@
   @apply flex items-center gap-2 border px-2 py-1 cursor-pointer mt-2;
 }
 .prod_btn p img {
-  @apply w-5;
+  @apply w-5 mx-auto;
 }
 
 /* FOOTER COMPONENTS */
