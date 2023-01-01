@@ -9,204 +9,9 @@
               <input type="checkbox" :id="category" :value="category" v-model="checked" />
               {{ category }}
             </label>
-            <span>1000</span>
-          </div>
-          <!--<div>
-            <label for="">
-              <input type="checkbox" />
-              Men Wear</label
-            >
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Women Wear</label
-            >
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Children
-            </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Jump Suit</label
-            >
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Sport Wear</label
-            >
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Developers Wear</label
-            >
-          </div> -->
-        </div>
-      </div>
-      <!-- <div class="aside_boxes">
-        <h5 class="filter_top">Filter by Price</h5>
-        <div class="filter_cat">
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              All Price
-            </label>
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              $0.99 - $100
-            </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              $101 -$200
-            </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              $201 - $300</label
-            >
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              $301 - $400
-            </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              $401 - $500
-            </label>
-            <span>150</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              $501 and above</label
-            >
-          </div>
-        </div> 
-      </div>
-      <div class="aside_boxes">
-        <h5 class="filter_top">Filter by Price</h5>
-        <div class="filter_cat">
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              All Color</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Black</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              White</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Red</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Blue</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Green</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              Trending Color</label
-            >
           </div>
         </div>
       </div>
-      <div class="aside_boxes">
-        <h5 class="filter_top">Filter by Size</h5>
-        <div class="filter_cat">
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              All Size</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              XL</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              L</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              M</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              S</label
-            >
-            <span>1000</span>
-          </div>
-          <div>
-            <label for="">
-              <input type="checkbox" />
-              XS</label
-            >
-            <span>1000</span>
-          </div>
-        </div>
-      </div>-->
     </aside>
     <section class="store_items">
       <div class="items_top">
@@ -216,6 +21,7 @@
               class="text-sm leading-none text-left text-gray-600 px-4 py-3 w-full border rounded border-gray-300 outline-none"
               type="text"
               placeholder="Search for Product"
+              v-model="searchProduct"
             />
             <svg
               class="absolute right-3 z-10 cursor-pointer"
@@ -326,127 +132,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/product-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div> -->
       </div>
 
       <div class="pages">
@@ -475,7 +160,10 @@ onMounted(async () => {
   .then((response) => {
     datas.value = response.data;
     console.log(datas);
-  });
+  })
+ .catch(() => {
+  console.log("Fail to load Api")
+ })
 
   let res = await axios.get("https://fakestoreapi.com/products/categories")
   console.log(res.data)
@@ -484,15 +172,35 @@ onMounted(async () => {
 
 let checked = ref([]);
 
+
 const computedItems = computed(()=>{
       if (checked.value.length === 0) {
         return datas.value;
-      } else {
+      } else if(checked.value.length > 0){
         return datas.value.filter(data =>
           checked.value.indexOf(data.category) !== -1 
         );  
-      }
-  })
+      } 
+  });
+
+  const searchProduct = ref("");
+function filteredList() {
+  return datas.value.filter((data) =>
+    data.title.toLowerCase().includes(searchProduct.value.toLowerCase())
+  );
+}
+
+
+
+// const searchedProducts = computed(() => {
+//       return datas.value.filter((data) => {
+//         return (
+//           data.title
+//             .toLowerCase()
+//             .indexOf(searchProduct.value.toLowerCase()) != -1
+//         );
+//       });
+// });
 
 
 
