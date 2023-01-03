@@ -6,7 +6,7 @@
         <img src="../../assets/img/product-2.jpg" alt="">
       </div>
       <div class="item_detail">
-        <p class="item_name">Colorful Stylish Shirt</p>
+        <p class="item_name">{{ props.title }}</p>
         <span class="item_rating">
           <img src="../../assets/icons/icons8-star-filled-60.png" alt="">
           <img src="../../assets/icons/icons8-star-filled-60.png" alt="">
@@ -178,6 +178,7 @@
 </template>
 
 <script setup>
+const props = defineProps(['id'])
 </script>
 
 <style>

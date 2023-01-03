@@ -169,7 +169,7 @@
   @apply border pt-3;
 }
 .real_prod .prod_img {
-  @apply w-[208px] h-[270px] mx-auto;
+  @apply lg:w-[208px] lg:h-[270px] mx-auto sm:w-[150px] sm:h-[200px] lg:p-5 sm:p-3; 
 }
 .real_prod .abt_prod {
   @apply border-t;
@@ -251,10 +251,10 @@ footer {
 
 /* STORE COMPONENT */
 .store {
-  @apply grid lg:grid-cols-4 lg:gap-6;
+  @apply lg:grid lg:grid-cols-4 lg:gap-6;
 }
 aside {
-  @apply pt-10 pl-4 sm:hidden lg:block;
+  @apply pt-10 pl-4 lg:block;
 }
 .aside_boxes {
   @apply border-b-2 border-gray-400 py-5;

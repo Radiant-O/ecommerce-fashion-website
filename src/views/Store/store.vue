@@ -115,15 +115,13 @@
         <div class="real_prod" v-for="data in computedItems">
           <img class="prod_img" :src=data.image />
           <div class="abt_prod">
-            <p class="name">{{data.title}}</p>
+            <p class="name">{{data.title.slice(0, 20)}}</p>
             <p class="amount">${{ data.price }}</p>
             <div class="prod_btn">
-              <p>
-                <router-link to="/store/details"
-                  ><img src="../../assets/icons/icons8-eyes-64.png" /><span
+              <p><router-view :to="'/store/id' + data.id">
+              <img src="../../assets/icons/icons8-eyes-64.png" /><span
                     >View Details</span
-                  ></router-link
-                >
+                  ></router-view>
               </p>
               <p>
                 <img src="../../assets/icons/icons8-shopping-cart-50.png" />
