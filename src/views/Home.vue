@@ -1,41 +1,31 @@
 <template>
   <section class="home">
-    <Swiper 
-    :modules="[Pagination, Autoplay]"
-    parallax
-    :autoplay="{
-      delay: 4000,
-      disableOnInteraction: false,
-    }"
-    :pagination="{clickable: true}"
-    class="banner parallax-slider">
-    <SwiperSlide
-     class="banner_img">
-        <img src="../assets/img/carousel-1.jpg" />
-      <div class="banner_text">
+    <Swiper
+      :modules="[Pagination, Autoplay]"
+      parallax
+      :autoplay="{
+        delay: 4000,
+        disableOnInteraction: false,
+      }"
+      :pagination="{ clickable: true }"
+      class="banner parallax-slider"
+    >
+      <SwiperSlide class="banner_img" v-for="carousel in carousels">
+        <img :src="carousel.imgSrc" />
+        <div class="banner_text">
+          <p class="head">{{  carousel.title }}</p>
+          <p class="txt">{{ carousel.abt }}</p>
+          <p class="ban_btn">Shop Now</p>
+        </div>
+      </SwiperSlide>
+      <!-- <SwiperSlide class="banner_img">
+        <img src="../assets/img/carousel-2.jpg" />
+         <div class="banner_text">
         <p class="head">10% OFF YOUR FIRST ORDER</p>
         <p class="txt">Fashionable Dress</p>
         <p class="ban_btn">Shop Now</p>
       </div>
-      </SwiperSlide>
-    <SwiperSlide
-     class="banner_img">
-        <img src="../assets/img/carousel-1.jpg" />
-      <!-- <div class="banner_text">
-        <p class="head">10% OFF YOUR FIRST ORDER</p>
-        <p class="txt">Fashionable Dress</p>
-        <p class="ban_btn">Shop Now</p>
-      </div> -->
-      </SwiperSlide>
-    <SwiperSlide
-     class="banner_img">
-        <img src="../assets/img/carousel-2.jpg" />
-      <!-- <div class="banner_text">
-        <p class="head">10% OFF YOUR FIRST ORDER</p>
-        <p class="txt">Fashionable Dress</p>
-        <p class="ban_btn">Shop Now</p>
-      </div> -->
-      </SwiperSlide>
+      </SwiperSlide> -->
     </Swiper>
     <div class="cta">
       <p class="cta_text">
@@ -128,6 +118,20 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+const carousels = [
+  {
+    id: 1,
+    imgSrc: require("../assets/img/carousel-1.jpg"),
+    title: "10% OFF YOUR FIRST ORDER",
+    abt: "Fashionable Dress",
+  },
+  {
+    id: 2,
+    imgSrc: require("../assets/img/carousel-2.jpg"),
+    title: "SHOP WITH YOUR TASTE AT DISCOUNT",
+    abt: "Gadgets and Electronics",
+  },
+];
 // const swiper = new Swiper('.swiper', {
 //  autoplay: {
 //    delay: 5000,
@@ -135,10 +139,8 @@ import "swiper/css/pagination";
 // });
 
 onMounted(async () => {
-  let res = await axios.get('https://fakestoreapi.com/products');
-  
-})
-
+  let res = await axios.get("https://fakestoreapi.com/products");
+});
 </script>
 
 <style></style>

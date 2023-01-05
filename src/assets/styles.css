@@ -80,7 +80,7 @@
   @apply w-[100%] lg:h-[30rem] sm:h-[20rem] opacity-80;
 }
 .banner_text {
-  @apply mx-auto w-full absolute sm:top-24 lg:top-52  text-white text-center;
+  @apply mx-auto w-full absolute sm:top-24  text-white text-center;
 }
 .banner_text .head {
   @apply font-normal lg:text-3xl sm:text-xl lg:mb-3 lg:py-3 sm:py-1;

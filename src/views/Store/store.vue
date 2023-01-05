@@ -4,9 +4,14 @@
       <div class="aside_boxes">
         <h5 class="filter_top">Categories</h5>
         <div class="filter_cat">
-          <div v-for="category in categories" :key="category.id">
+          <div v-for="category in productStore.categories" :key="category.id">
             <label for="">
-              <input type="checkbox" :id="category" :value="category" v-model="checked" />
+              <input
+                type="checkbox"
+                :id="category"
+                :value="category"
+                v-model="productStore.checked"
+              />
               {{ category }}
             </label>
           </div>
@@ -21,7 +26,7 @@
               class="text-sm leading-none text-left text-gray-600 px-4 py-3 w-full border rounded border-gray-300 outline-none"
               type="text"
               placeholder="Search for Product"
-              v-model="searchProduct"
+              v-model="productStore.query"
             />
             <svg
               class="absolute right-3 z-10 cursor-pointer"
@@ -48,80 +53,24 @@
             </svg>
           </div>
         </div>
-
-        <div class="item_sort">
-          <Menu as="div" class="relative inline-block text-left">
-            <div>
-              <MenuButton
-                class="inline-flex justify-center outline-none w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-              >
-                Sort by
-                <ChevronDownIcon
-                  class="-mr-1 ml-2 h-5 w-5"
-                  aria-hidden="true"
-                />
-              </MenuButton>
-            </div>
-
-            <transition
-              enter-active-class="transition ease-out duration-100"
-              enter-from-class="transform opacity-0 scale-95"
-              enter-to-class="transform opacity-100 scale-100"
-              leave-active-class="transition ease-in duration-75"
-              leave-from-class="transform opacity-100 scale-100"
-              leave-to-class="transform opacity-0 scale-95"
-            >
-              <MenuItems
-                class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-              >
-                <div class="py-1">
-                  <MenuItem v-slot="{ active }">
-                    <p
-                      :class="[
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-2 py-2 text-sm',
-                      ]"
-                    >
-                      Latest
-                    </p>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <p
-                      :class="[
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-2 py-2 text-sm',
-                      ]"
-                    >
-                      Popular
-                    </p>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <p
-                      :class="[
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-2 py-2 text-sm',
-                      ]"
-                    >
-                      Trending
-                    </p>
-                  </MenuItem>
-                </div>
-              </MenuItems>
-            </transition>
-          </Menu>
-        </div>
       </div>
       <div class="items_store">
-        <div class="real_prod" v-for="data in computedItems">
-          <img class="prod_img" :src=data.image />
+        <div
+          class="real_prod"
+          v-for="product in productStore.filterProducts"
+          :key="product.id"
+        >
+          <img class="prod_img" :src="product.image" />
           <div class="abt_prod">
-            <p class="name">{{data.title.slice(0, 20)}}</p>
-            <p class="amount">${{ data.price }}</p>
+            <p class="name">{{ product.title }}</p>
+            <p class="amount">${{ product.price }}</p>
             <div class="prod_btn">
-              <p><router-view :to="'/store/id' + data.id">
-              <img src="../../assets/icons/icons8-eyes-64.png" /><span
+              <p>
+                <router-link :to="{name: 'MovieDetails', params: {id: movie.id}}">
+                  <img src="../../assets/icons/icons8-eyes-64.png" /><span
                     >View Details</span
-                  ></router-view>
+                  ></router-link
+                >
               </p>
               <p>
                 <img src="../../assets/icons/icons8-shopping-cart-50.png" />
@@ -141,72 +90,18 @@
 </template>
 
 <script setup>
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
-import {
-  ChevronDownIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "@heroicons/vue/20/solid";
-import axios from "axios";
-import { ref, onMounted, computed } from "vue";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/20/solid";
+import { ref, onMounted, watchEffect } from "vue";
+import { useProductStore } from "@/Store/store";
 
-let datas = ref([]);
-let categories = ref([]);
+const productStore = useProductStore();
 
 onMounted(async () => {
-  await axios.get("https://fakestoreapi.com/products")
-  .then((response) => {
-    datas.value = response.data;
-    console.log(datas);
-  })
- .catch(() => {
-  console.log("Fail to load Api")
- })
-
-  let res = await axios.get("https://fakestoreapi.com/products/categories")
-  console.log(res.data)
-  categories.value = res.data
+  productStore.getProducts();
+  productStore.getCategory();
 });
 
-let checked = ref([]);
-
-
-const computedItems = computed(()=>{
-      if (checked.value.length === 0) {
-        return datas.value;
-      } else if(checked.value.length > 0){
-        return datas.value.filter(data =>
-          checked.value.indexOf(data.category) !== -1 
-        );  
-      } 
-  });
-
-  const searchProduct = ref("");
-function filteredList() {
-  return datas.value.filter((data) =>
-    data.title.toLowerCase().includes(searchProduct.value.toLowerCase())
-  );
-}
-
-
-
-// const searchedProducts = computed(() => {
-//       return datas.value.filter((data) => {
-//         return (
-//           data.title
-//             .toLowerCase()
-//             .indexOf(searchProduct.value.toLowerCase()) != -1
-//         );
-//       });
-// });
-
-
-
-// const sortCategory = async() => {
-//   let res = await axios.get("https://fakestoreapi.com/products/categories")
-//   categories.value = res
-//   console.log(res)
-// }
+// watchEffect(()=>{
+//   productStore.getProducts(productStore.query)
+// })
 </script>
-
-<style></style>

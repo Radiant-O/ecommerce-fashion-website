@@ -15,7 +15,7 @@
             <p class="coll">Spring Collection</p>
             <p class="ads_btn">Shop Now</p>
         </div>
-        <img class="right_img" src="../assets/img/offer-1.png">
+        <img class="right_img" src="../assets/img/offer-2.jpg">
     </div>
     
   </section>

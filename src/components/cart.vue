@@ -6,7 +6,7 @@
       </div>
 
       <div class="cart_body">
-        <img src="../assets/img/product-3.jpg" />
+        <img src="../assets/img/cat-1.jpg" />
         <div class="cart_item">
           <p class="item_name">Colorful Stylish Shirt</p>
           <p class="item_amount">
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="cart_body">
-        <img src="../assets/img/product-3.jpg" />
+        <img src="../assets/img/cat-1.jpg" />
         <div class="cart_item">
           <p class="item_name">Colorful Stylish Shirt</p>
           <p class="item_amount">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="cart_body">
-        <img src="../assets/img/product-3.jpg" />
+        <img src="../assets/img/cat-1.jpg" />
         <div class="cart_item">
           <p class="item_name">Colorful Stylish Shirt</p>
           <p class="item_amount">
