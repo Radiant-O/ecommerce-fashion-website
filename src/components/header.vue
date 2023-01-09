@@ -52,7 +52,7 @@
       </div>
 
       <div class="cart" @click="toggleCart">
-        <span class="cart_no">0</span>
+        <span class="cart_no">{{ cartStore.cartItems.length }}</span>
         <img src="../assets/icons/icons8-shopping-cart-50.png" alt="" />
       </div>
 
@@ -91,6 +91,10 @@
 <script setup>
 import Cart from "@/components/cart.vue";
 import { ref } from "vue";
+import { useCartStore } from "@/Store/cart"
+
+const cartStore = useCartStore();
+
 const routes = [
   {
     id: 1,

@@ -97,14 +97,12 @@ import { onMounted } from "vue";
 import { useProductStore } from "@/Store/store";
 import { useCartStore } from "@/Store/cart";
 
-
 const productStore = useProductStore();
 const cartStore = useCartStore();
 
-
 onMounted(async () => {
   await productStore.getProducts();
-  await productStore.getCategory(); 
+  await productStore.getCategory();
 });
 
 // watchEffect(()=>{

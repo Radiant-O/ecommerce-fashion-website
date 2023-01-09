@@ -20,7 +20,7 @@
           {{ productStore.singleProduct.description }}
         </p>
         <div class="add_cart">
-          <div class="cart_in">
+          <!-- <div class="cart_in">
             <p class="cart_vol" @click="quantity--">
               <img src="../../assets/icons/icon-minus.svg" />
             </p>
@@ -28,8 +28,11 @@
             <p class="cart_vol" @click="quantity++">
               <img src="../../assets/icons/icon-plus.svg" />
             </p>
-          </div>
-          <div class="addtocart">
+          </div> -->
+          <div
+            class="addtocart"
+            @click="cartStore.addToCart(productStore.singleProduct)"
+          >
             <img src="../../assets/icons/icons8-shopping-cart-50.png" />
             <span>Add to Cart</span>
           </div>
@@ -138,12 +141,14 @@
 
 <script setup>
 import { ChevronLeftIcon } from "@heroicons/vue/20/solid";
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 import { useProductStore } from "@/Store/store";
+import { useCartStore } from "@/Store/cart"
 
 const productStore = useProductStore();
+const cartStore = useCartStore();
 
-const quantity = ref(0);
+//const quantity = ref(0);
 
 const props = defineProps({
   id: {
