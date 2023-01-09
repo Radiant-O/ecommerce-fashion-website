@@ -346,16 +346,18 @@ aside {
 
 /* PRODUCT DETAILS COMPONENT */
 .productdetails {
-  @apply pt-10;
+}
+.productdetails .back_btn{
+  @apply w-14 mb-10 cursor-pointer;
 }
 .productdetails h3 {
   @apply text-3xl font-semibold text-center;
 }
 .product_details {
-  @apply flex sm:flex-col lg:flex-row gap-4 mt-8 px-6;
+  @apply flex sm:flex-col lg:flex-row lg:gap-8 sm:gap-4 mt-8 px-6;
 }
 .product_details .item_img {
-  @apply lg:border border-amber-500 px-3;
+  @apply px-3 lg:w-[250px] sm:mx-auto sm:w-[200px];
 }
 .item_detail .item_name {
   @apply text-2xl font-semibold;
@@ -370,7 +372,7 @@ aside {
   @apply text-xl font-semibold;
 }
 .item_detail .item_text {
-  @apply text-lg italic py-2;
+  @apply text-lg italic py-2 lg:w-[65%];
 }
 .item_detail .sizes {
   @apply py-2 text-lg;
@@ -388,10 +390,10 @@ aside {
   @apply flex items-center border;
 }
 .cart_in .cart_vol {
-  @apply cursor-pointer text-2xl font-extrabold w-fit bg-amber-500 py-1 px-3;
+  @apply cursor-pointer text-2xl font-extrabold px-3 w-fit py-3;
 }
 .cart_in input {
-  @apply w-9 text-xl py-1 outline-none pl-1;
+  @apply w-9 text-xl py-1 outline-none pl-1 border-x;
 }
 .add_cart .addtocart {
   @apply flex items-center gap-3 w-fit bg-amber-500 cursor-pointer px-4 py-[0.3rem];
@@ -412,7 +414,7 @@ aside {
   @apply mt-10;
 }
 .review_details {
-  @apply flex sm:flex-col lg:flex-row px-2 pt-5 gap-8;
+  @apply flex sm:flex-col lg:ml-14 lg:flex-row px-2 pt-5 gap-8;
 }
 .review_text {
   @apply lg:w-[45%] sm:p-4 lg:p-0;
@@ -459,7 +461,7 @@ aside {
 
 /* CART COMPONENT */
 .cart_box {
-  @apply border-2 w-fit rounded-md shadow-xl py-4 absolute top-[9%] sm:left-[20%] lg:left-[78.5%] bg-white z-50;
+  @apply border-2 w-fit rounded-md shadow-xl py-4 absolute top-[10%] sm:left-[20%] lg:left-[75%] bg-white z-50;
 }
 .cart_box .cart_head {
   @apply text-2xl italic font-semibold py-1 text-center;
@@ -468,7 +470,7 @@ aside {
   @apply flex gap-5 items-center border border-t-black px-5 py-2;
 }
 .cart_body img {
-  @apply w-10 border-2;
+  @apply w-14 border-2;
 }
 .cart_item .item_name {
   @apply text-lg;
@@ -480,7 +482,7 @@ aside {
   @apply font-bold;
 }
 .cart_body .cart_remove {
-  @apply font-semibold text-lg cursor-pointer;
+  @apply font-semibold w-5 cursor-pointer;
 }
 .cart_box .empty_cart {
   @apply text-center italic text-xl;

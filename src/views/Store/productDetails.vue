@@ -1,46 +1,33 @@
 <template>
   <section class="productdetails">
+    <div class="back_btn" @click="$router.back()">
+      <ChevronLeftIcon></ChevronLeftIcon>
+    </div>
     <h3>Product Details</h3>
-    <div class="product_details" v-for="item in datas">
-      <div class="item_img">
-        <img :src=item.image />
-      </div>
+    <div class="product_details">
+      <img class="item_img" :src="productStore.singleProduct.image" />
       <div class="item_detail">
-        <p class="item_name">{{ item.title }}</p>
+        <p class="item_name">{{ productStore.singleProduct.title }}</p>
         <span class="item_rating">
           <img src="../../assets/icons/icons8-star-filled-60.png" alt="" />
           <img src="../../assets/icons/icons8-star-filled-60.png" alt="" />
           <img src="../../assets/icons/icons8-star-filled-60.png" alt="" />
-          <img src="../../assets/icons/icons8-star-filled-60.png" alt="" />
           <img src="../../assets/icons/icons8-star-half-empty-96.png" alt="" />
-          <small class="review_no">(50 Reviews)</small>
+          <!-- <small class="review_no">({{ productStore.singleProduct.rating }})</small> -->
         </span>
-        <p class="item_amount">$200.00</p>
+        <p class="item_amount">${{ productStore.singleProduct.price }}</p>
         <p class="item_text">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum magni ea
-          eligendi eveniet ipsam, ex voluptatibus commodi excepturi dicta eius,
-          sit quia laudantium facilis mollitia.
-        </p>
-        <p class="sizes">
-          Size: <label for=""> <input type="radio" /> XL </label>
-          <label for=""> <input type="radio" /> L </label>
-          <label for=""> <input type="radio" /> M </label>
-          <label for=""> <input type="radio" /> S </label>
-          <label for=""> <input type="radio" /> XS </label>
-        </p>
-        <p class="color">
-          Colors:
-          <label for=""> <input type="radio" /> Black </label>
-          <label for=""> <input type="radio" /> White </label>
-          <label for=""> <input type="radio" /> Red </label>
-          <label for=""> <input type="radio" /> Blue </label>
-          <label for=""> <input type="radio" /> Green </label>
+          {{ productStore.singleProduct.description }}
         </p>
         <div class="add_cart">
           <div class="cart_in">
-            <p class="cart_vol">+</p>
-            <input type="text" value="1" />
-            <p class="cart_vol">-</p>
+            <p class="cart_vol" @click="quantity--">
+              <img src="../../assets/icons/icon-minus.svg" />
+            </p>
+            <input type="text" v-model="quantity" />
+            <p class="cart_vol" @click="quantity++">
+              <img src="../../assets/icons/icon-plus.svg" />
+            </p>
           </div>
           <div class="addtocart">
             <img src="../../assets/icons/icons8-shopping-cart-50.png" />
@@ -107,7 +94,7 @@
         </div>
       </div>
     </section>
-    <div class="may_like">
+    <!-- <div class="may_like">
       <h3>You May Like</h3>
       <div class="like">
         <div class="real_prod">
@@ -143,50 +130,30 @@
             </div>
           </div>
         </div>
-        <div class="real_prod">
-          <img src="../../assets/img/cat-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
-        <div class="real_prod">
-          <img src="../../assets/img/cat-1.jpg" />
-          <div class="abt_prod">
-            <p>Colorful Stylish Shirt</p>
-            <p>$50</p>
-            <div class="prod_btn">
-              <p>View Details</p>
-              <p>Add To Cart</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { ChevronLeftIcon } from "@heroicons/vue/20/solid";
+import { ref, onMounted } from "vue";
 import { useProductStore } from "@/Store/store";
 
 const productStore = useProductStore();
 
+const quantity = ref(0);
+
 const props = defineProps({
   id: {
     type: String,
-    required: true
-  }
-})
-
+    required: true,
+  },
+});
 
 onMounted(async () => {
-
-  await productStore.getSingleProduct(props.id)
+  productStore.getSingleProduct(props.id);
   // await axios
   //   .get(`https://fakestoreapi.com/products/${parseInt(props.id)}`)
   //   .then((response) => {

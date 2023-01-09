@@ -66,13 +66,15 @@
             <p class="amount">${{ product.price }}</p>
             <div class="prod_btn">
               <p>
-                <router-link :to="{name: 'MovieDetails', params: {id: movie.id}}">
+                <router-link
+                  :to="{ name: 'details', params: { id: product.id } }"
+                >
                   <img src="../../assets/icons/icons8-eyes-64.png" /><span
                     >View Details</span
                   ></router-link
                 >
               </p>
-              <p>
+              <p @click="cartStore.addToCart(product)">
                 <img src="../../assets/icons/icons8-shopping-cart-50.png" />
                 <span>Add to Cart</span>
               </p>
@@ -91,14 +93,18 @@
 
 <script setup>
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/20/solid";
-import { ref, onMounted, watchEffect } from "vue";
+import { onMounted } from "vue";
 import { useProductStore } from "@/Store/store";
+import { useCartStore } from "@/Store/cart";
+
 
 const productStore = useProductStore();
+const cartStore = useCartStore();
+
 
 onMounted(async () => {
-  productStore.getProducts();
-  productStore.getCategory();
+  await productStore.getProducts();
+  await productStore.getCategory(); 
 });
 
 // watchEffect(()=>{

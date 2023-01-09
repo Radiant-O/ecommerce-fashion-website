@@ -52,11 +52,11 @@ export const useProductStore = defineStore("products", {
       await axios
         .get(`https://fakestoreapi.com/products/${parseInt(id)}`)
         .then((response) => {
-         // this.singleProduct = response.data;
-          console.log(response);
+          this.singleProduct = response.data;
+          console.log(this.singleProduct);
         })
         .catch(() => {
-          console.log("Fail to load Api");
+          console.log("Fail to load Product");
         });
     },
   },

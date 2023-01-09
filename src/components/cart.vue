@@ -5,43 +5,26 @@
         <p>Cart</p>
       </div>
 
-      <div class="cart_body">
-        <img src="../assets/img/cat-1.jpg" />
+      <div
+        class="cart_body"
+        v-for="item in cartStore.cartItems"
+        :key="item.id"
+      >
+        <img :src=item.image />
         <div class="cart_item">
-          <p class="item_name">Colorful Stylish Shirt</p>
+          <p class="item_name">{{ item.title.slice(0, 20) }}</p>
           <p class="item_amount">
-            $120 x 2
-            <span class="item_total">$240</span>
+            {{ item.price }}
+            <span class="quantity">
+              <img class="vol" src="../assets/icons/icon-minus.svg"/>
+              {{ quantity }}
+              <img class="vol" src="../assets/icons/icon-plus.svg"/>
+            </span>
+            <span class="item_total">{{ item.price * quantity }}</span>
           </p>
         </div>
         <div class="cart_remove">
-          <p>X</p>
-        </div>
-      </div>
-      <div class="cart_body">
-        <img src="../assets/img/cat-1.jpg" />
-        <div class="cart_item">
-          <p class="item_name">Colorful Stylish Shirt</p>
-          <p class="item_amount">
-            $120 x 2
-            <span class="item_total">$240</span>
-          </p>
-        </div>
-        <div class="cart_remove">
-          <p>X</p>
-        </div>
-      </div>
-      <div class="cart_body">
-        <img src="../assets/img/cat-1.jpg" />
-        <div class="cart_item">
-          <p class="item_name">Colorful Stylish Shirt</p>
-          <p class="item_amount">
-            $120 x 2
-            <span class="item_total">$240</span>
-          </p>
-        </div>
-        <div class="cart_remove">
-          <p>X</p>
+          <img src="../assets/icons/icon-close.svg" />
         </div>
       </div>
 
@@ -52,14 +35,21 @@
       <div class="check">
         <div class="checkout_button">
           <p>Checkout</p>
-        </div> 
+        </div>
       </div>
     </section>
   </teleport>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { ref } from "vue"
+import { useCartStore } from "@/Store/cart";
+//import { useProductStore } from "@/Store/store";
+
+//const productStore = useProductStore();
+const cartStore = useCartStore();
+
+const quantity = ref(0)
 </script>
 
 <style></style>
