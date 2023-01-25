@@ -5,18 +5,42 @@ export const useCartStore = defineStore("cart", {
   state: () => ({
     products: [],
     cartItems: [],
+    quantity: 1,
   }),
   getters: {},
   actions: {
     addToCart(item) {
-      this.cartItems.findIndex((product) => product.id === item.id);
-      // if (index !== -1) {
-      //   this.products[index].quantity += 1;
-      // } else {
-      //   item.quantity = 1;
-      this.cartItems.push(item);
-      console.log(this.cartItems)
-      // }
+      let index = this.cartItems.findIndex((product) => product.id === item.id);
+      if (index !== -1) {
+        this.products[index].quantity += 1;
+      } else {
+        item.quantity = 1;
+        this.cartItems.push(item);
+        console.log(this.cartItems);
+      }
+    },
+
+    increaseQ(item) {
+      let index = this.cartItems.findIndex((product) => product.id === item.id);
+      if (index !== -1) {
+        this.cartItems[index].quantity += 1;
+      }
+    },
+    decreaseQ(item) {
+      let index = this.cartItems.findIndex((product) => product.id === item.id);
+      if (index !== -1) {
+        this.cartItems[index].quantity -= 1;
+        if (this.cartItems[index].quantity === 0) {
+          this.cartItems = this.cartItems.filter(
+            (product) => product.id !== item.id
+          );
+        }
+      }
+    },
+    removeFromCart(item) {
+      this.cartItems = this.cartItems.filter(
+        (product) => product.id !== item.id
+      );
     },
 
     async getProducts() {

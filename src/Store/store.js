@@ -5,6 +5,7 @@ export const useProductStore = defineStore("products", {
   state: () => ({
     products: [],
     query: "",
+    quantity: 1,
     singleProduct: {},
     categories: [],
     checked: [],

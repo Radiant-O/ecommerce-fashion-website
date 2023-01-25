@@ -1,4 +1,9 @@
-# ecommerce-app
+# Laz Store Ecommerce
+## Made with Vuejs3, Tailwind, SwiperJs and Pinia for State management
+
+
+![HomePage](home.png)
+![StorePage](store.png)
 
 ## Project setup
 ```
@@ -13,11 +18,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
 ```
 
 ### Customize configuration

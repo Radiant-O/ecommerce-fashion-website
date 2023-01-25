@@ -479,7 +479,7 @@ aside {
   @apply flex items-center text-lg
 }
 .cart_item .quantity .vol{
-  @apply text-2xl font-bold
+  @apply w-3 items-center mx-2 cursor-pointer
 }
 .cart_item .item_amount {
   @apply flex gap-8 font-medium;
@@ -489,6 +489,12 @@ aside {
 }
 .cart_body .cart_remove {
   @apply font-semibold w-5 cursor-pointer;
+}
+.total_cart{
+  @apply flex flex-row justify-between items-center px-6
+}
+.total_cart span{
+  @apply text-xl font-medium flex
 }
 .cart_box .empty_cart {
   @apply text-center italic text-xl mt-10 mb-5 mx-10;

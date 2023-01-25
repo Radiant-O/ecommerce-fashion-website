@@ -1,10 +1,14 @@
 <template>
   <section class="prod_container">
-    <div class="real_prod" v-for="data in datas">
-      <img class="prod_img" :src="data.image" />
+    <div
+      class="real_prod"
+      v-for="product in productStore.products.slice(0,8)"
+      :key="product.id"
+    >
+      <img class="prod_img" :src="product.image" />
       <div class="abt_prod">
-        <p class="name">{{ data.title }}</p>
-        <p class="amount">${{ data.price }}</p>
+        <p class="name">{{ product.title }}</p>
+        <p class="amount">${{ product.price }}</p>
         <div class="prod_btn">
           <p>
             <router-link :to="{ name: 'details', params: { id: product.id } }">
@@ -13,7 +17,7 @@
               ></router-link
             >
           </p>
-          <p @click="cartStore.addToCart(data)">
+          <p @click="cartStore.addToCart(productStore.singleProduct)">
             <img src="../assets/icons/icons8-shopping-cart-50.png" /> Add To
             Cart
           </p>
@@ -24,24 +28,15 @@
 </template>
 
 <script setup>
-import axios from "axios";
-import { ref, onMounted } from "vue";
-//import { useProductStore } from "@/Store/store";
+import { onMounted } from "vue";
+import { useProductStore } from "@/Store/store";
 import { useCartStore } from "@/Store/cart";
 
-//const productStore = useProductStore();
+const productStore = useProductStore();
 const cartStore = useCartStore();
 
-let datas = ref([]);
-
 onMounted(async () => {
-  await axios
-    .get("https://fakestoreapi.com/products?limit=8")
-    .then((response) => {
-      datas.value = response.data;
-      console.log(datas);
-    })
-    .catch((error) => console.log(error));
+  await productStore.getProducts();
 });
 </script>
 
